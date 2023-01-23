@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+:root{
+    
+--color-red: hsl(0, 100%, 74%) ;
+--color-green: hsl(154, 59%, 51%);
+--color-blue: hsl(248, 32%, 49%);
+--color-dark-blue: hsl(249, 10%, 26%) ;
+--color-grayish-blue: hsl(246, 25%, 77%);
+}
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color:var(--color-red);
+    background-image: url('images/bg-intro-desktop.png');
+    
+    background-position: center center;
+    background-attachment: fixed;
+    background-repeat: no-repeat; 
+    background-size: cover;
+    font-weight: 400;
+    color:white;
+    font-family:'Poppins',sans-serif;
+}
+main{
+
+display:flex;
+justify-content:space-between;
+max-width:1200px;
+padding:1rem;
+}
+.description{
+    padding:1.5rem;
+    
+    align-self:center;
+}
+main .description h1{
+
+font-size: 3rem;
+font-weight:700;
+margin-bottom: 1.5rem;
+}
+main .description p{
+    font-size:1.1rem;
+    line-height: 1.8;
+    max-width:600px;
+}
+.container{
+    padding:1.5rem;
+    display: flex;
+    flex-direction: column;
+}
+header,
+.form{
+    max-width:450px;
+}
+header{
+    background-color:var(--color-blue);
+    padding: 1rem 1.5rem;
+text-align: center;
+border-radius: 10px;
+margin-bottom:1.5rem;
+}
+header p span{
+    font-weight:700;
+}
+.form{
+    padding: 1.5rem;
+    background-color: white;
+    border-radius: 10px;
+    width: 100%;
+}
+.form-control{
+    margin-bottom: 10px;
+    padding-bottom: 29px;
+    position:relative;
+}
+.form input{
+    display: block;
+    padding:10px;
+    font-family: inherit;
+    width:100%;
+    border:0.5px solid var(--color-grayish-blue);
+    font-size:1rem;
+    border-radius: 5px;
+    color:var(--color-dark-blue);
+    font-weight: 600;
+    font-size:14px;
+}
+
+.form-control input:focus{
+    
+    outline:2px solid var(--color-grayish-blue);
+}
+.form-control i.fa-exclamation-circle{
+    position: absolute;
+    top:13px;
+    right:10px;
+    color:var(--color-red);
+    visibility:hidden;
+}
+.form-control i.fa-eye-slash{
+    position: absolute;
+    top:13px;
+    right:35px;
+    color:var(--color-dark-blue);
+    cursor:pointer;
+    /* visibility: hidden; */
+}
+/* .form-control i.fa-eye-slash.show{
+    visibility: visible;
+} */
+.form-control i.fa-eye-slash.hide{
+    visibility: hidden;
+}
+.form-control i.fa-eye.show{
+    visibility: visible;
+}
+.form-control i.fa-eye{
+    position: absolute;
+    top:13px;
+    right:35px;
+    color:var(--color-dark-blue);
+    visibility: hidden;
+    cursor:pointer;
+}
+.form-control small{
+    position: absolute;
+    right:0;
+    bottom: 0;
+    color:var(--color-red);
+    visibility: hidden;
+}
+.form-control.error input{
+    border-color: var(--color-red);
+}
+.form-control.error small{
+    visibility: visible;
+}
+.form-control.error input:focus{
+    border-color:var(--color-grayish-blue);
+}
+.form-control.error i.fa-exclamation-circle{
+    visibility: visible;
+}
+.btn{
+    background-color:var(--color-green);
+    font-weight: 600;
+    padding: 1rem 2rem;
+    text-align: center;
+    width:100%;
+    border:none;
+    border-radius:5px;
+    color:white;
+    text-transform:uppercase;
+    letter-spacing: 1px;
+    cursor:pointer;
+}
+.terms{
+    text-align: center;
+    margin-top:1rem;
+    font-size: 0.75rem;
+    color:var(--color-grayish-blue);
+
+}
+.terms a{
+    text-decoration: none;
+    color:var(--color-red);
+    font-weight: 700;
+}
+footer{
+    padding:1rem;
+}
+footer p{
+    text-align: center;
+}
+footer p a{
+    color:var(--color-dark-blue);
+    font-weight: 600;
+    text-decoration:none;
+}
+@media(max-width:850px){
+    main{
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+    .description{
+        text-align: center;
+        padding:1rem 0;
+    }
+   
+    main .description h1{
+        font-size: 2rem;
+    }
+    .container{
+        padding: 1.5rem 0.5rem;
+    }
+}
