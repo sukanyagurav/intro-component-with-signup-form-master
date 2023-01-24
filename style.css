@@ -12,6 +12,7 @@
 --color-blue: hsl(248, 32%, 49%);
 --color-dark-blue: hsl(249, 10%, 26%) ;
 --color-grayish-blue: hsl(246, 25%, 77%);
+
 }
 body{
     display: flex;
@@ -85,52 +86,55 @@ header p span{
 }
 .form input{
     display: block;
-    padding:10px;
+    padding:10px 14px;
     font-family: inherit;
     width:100%;
-    border:0.5px solid var(--color-grayish-blue);
-    font-size:1rem;
+    border:1px solid var(--color-grayish-blue);
+    font-size:1.2rem;
     border-radius: 5px;
     color:var(--color-dark-blue);
-    font-weight: 600;
+    font-weight: 400;
     font-size:14px;
+
 }
 
 .form-control input:focus{
+    background-color: white;
+    outline:1px solid var(--color-grayish-blue);
+}
+.form-control label{
+    color:var(--color-blue);
+    position: absolute;
+    left:10px;
+    background-color: white;
+    top:9px;
+    padding: 0 0.5rem;
+    transition:transform 0.3s ease-in-out;
     
-    outline:2px solid var(--color-grayish-blue);
+}
+.form-control input:focus + label,
+.form-control input:valid + label,
+.form-control input:not(:placeholder-shown) + label{
+    font-size:0.9rem;
+    transform: translateY(-20px);
 }
 .form-control i.fa-exclamation-circle{
     position: absolute;
-    top:13px;
+    top:15px;
     right:10px;
     color:var(--color-red);
     visibility:hidden;
 }
-.form-control i.fa-eye-slash{
+.form-control #showPassword{
     position: absolute;
     top:13px;
     right:35px;
     color:var(--color-dark-blue);
     cursor:pointer;
-    /* visibility: hidden; */
+   
 }
-/* .form-control i.fa-eye-slash.show{
-    visibility: visible;
-} */
-.form-control i.fa-eye-slash.hide{
-    visibility: hidden;
-}
-.form-control i.fa-eye.show{
-    visibility: visible;
-}
-.form-control i.fa-eye{
-    position: absolute;
-    top:13px;
-    right:35px;
-    color:var(--color-dark-blue);
-    visibility: hidden;
-    cursor:pointer;
+.form-control input:active{
+    outline:none;
 }
 .form-control small{
     position: absolute;
@@ -148,6 +152,9 @@ header p span{
 .form-control.error input:focus{
     border-color:var(--color-grayish-blue);
 }
+.form-control.success input{
+    border-color:var(--color-green);
+}
 .form-control.error i.fa-exclamation-circle{
     visibility: visible;
 }
@@ -163,7 +170,88 @@ header p span{
     text-transform:uppercase;
     letter-spacing: 1px;
     cursor:pointer;
+    z-index:2;
 }
+.btn:active{
+    transform: scale(0.98);
+}
+.btn:hover{
+    opacity:0.9;
+}
+.confetti-container{
+    position:relative;
+    width: 100%;
+    visibility: hidden;
+}
+.confetti {
+	position: absolute;
+	display: flex;
+	width: 10px;
+	height: 25px;
+	top: -70px;
+
+	}
+
+.confetti:nth-child(1) {
+	/* background-color: var(--color1); */
+    
+	animation: fall 2.5s linear infinite;
+	left: -5%;
+	}
+
+.confetti:nth-child(2) {
+	/* background-color: var(--color2); */
+	animation: fall 2.3s linear infinite .2s;
+	left: -10%;
+	}
+
+.confetti:nth-child(3) {
+	background-color: var(--color-green);
+	animation: fall 2.4s linear infinite .4s;
+	left: -15%;
+	}
+
+.confetti:nth-child(4) {
+	background-color: var(--color-blue);
+	animation: fall 2.7s linear infinite .1s;
+	left: 40%;
+	}
+
+.confetti:nth-child(5) {
+	background-color: var(--color-green);
+	animation: fall 2.6s linear infinite .7s;
+	left: 50%;
+	}
+
+.confetti:nth-child(6) {
+	background-color: var(--color-grayish-blue);
+	animation: fall 2.4s linear infinite .2s;
+	left: 60%;
+	}
+    .confetti:nth-child(7) {
+        background-color: var(--color-dark-blue);
+        animation: fall 2.8s linear infinite .2s;
+        left: 70%;
+ 
+    }
+    .confetti:nth-child(8) {
+        background-color: var(--color-blue);
+        animation: fall 2s linear infinite .2s;
+        left: 80%;
+ 
+    }
+    .confetti:nth-child(9) {
+        background-color: var(--color-green);
+        animation: fall 3s linear infinite .2s;
+        left: 85%;
+ 
+    }
+    .confetti:nth-child(10) {
+        background-color: var(--color-dark-blue);
+        animation: fall 2.7s linear infinite .2s;
+        left: 90%;
+ 
+    }
 .terms{
     text-align: center;
     margin-top:1rem;
@@ -187,6 +275,19 @@ footer p a{
     font-weight: 600;
     text-decoration:none;
 }
+
+@keyframes fall {
+	0% {top:-500px;
+
+     transform: rotate(0deg) rotateY(-90deg);
+     opacity:1;}
+	100% {top:-400px; 
+    
+        transform: rotate(360deg) rotateY(180deg);
+         opacity:0.7;
+     }
+}
+
 @media(max-width:850px){
     main{
         flex-wrap: wrap;
@@ -200,6 +301,9 @@ footer p a{
    
     main .description h1{
         font-size: 2rem;
+    }
+    main .description p{
+        font-size: 0.9rem;
     }
     .container{
         padding: 1.5rem 0.5rem;

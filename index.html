@@ -26,34 +26,54 @@
       <p><span>Try it free 7 days</span> then $20/mo. thereafter
       </p>  
       </header>
-      <form  id="form" class="form">
+      <form  id="form" class="form" novalidate="novalidate">
           <div class="form-control">
-            <input type="text" placeholder="First Name" id="firstName">
-            
+            <input type="text" placeholder=" "  id="firstName" required>
+            <label for="firstName">First Name</label>
             <i class="fas fa-exclamation-circle"></i>
-            <small>Error Message</small>
+            <small></small>
           </div>
           <div class="form-control">
-            <input type="text" placeholder="Last Name" id="lastName">
-         
+            <input type="text" placeholder=" " required id="lastName">
+            <label for="lastName">Last Name</label>
             <i class="fas fa-exclamation-circle"></i>
-            <small>Error Message</small>
+            <small></small>
           </div>
           <div class="form-control">
-            <input type="email" placeholder="Email Address" id="email">
-           
+            <input type="email"  placeholder=" " id="email" required>
+            <label for="email">Email</label>
             <i class="fas fa-exclamation-circle"></i>
-            <small>Error Message</small>
+            <small></small>
           </div>
           <div class="form-control">
-            <input type="password" placeholder="Password" id="password">
-            <i class="fa-solid fa-eye-slash show"></i>
-            <i class="fa-solid fa-eye"></i>
+            <input type="password" placeholder=" " required  id="password">
+            <label for="password">Password</label>
+            <i class="fa-solid fa-eye-slash" id="showPassword"></i>
+            <!-- <i class="fa-solid fa-eye"></i> -->
             <i class="fas fa-exclamation-circle"></i>
-            <small>Error Message</small>
+            <small></small>
           </div>
-          <button class="btn">Claim your free trial </button>
           
+
+          <button class="btn">Claim your free trial </button>
+          <div class="confetti-container">
+
+            <div class="confetti">🎉</div>
+            <div class="confetti">🎊</div>
+            <div class="confetti"></div>
+            <div class="confetti"></div>
+            <div class="confetti"></div>
+            <div class="confetti"></div>
+
+
+            <div class="confetti"></div>
+            <div class="confetti"></div>
+            <div class="confetti"></div>
+            <div class="confetti"></div>
+            <div class="confetti"></div>
+            <div class="confetti"></div>
+
+          </div>
           <p class="terms">By clicking the button, you are agreeing to our <a href="#">Terms and Services</a>
           </p>
         </form>
