@@ -37,6 +37,7 @@ display:flex;
 justify-content:space-between;
 max-width:1200px;
 padding:1rem;
+--duration:1.4s
 }
 .description{
     padding:1.5rem;
@@ -48,11 +49,14 @@ main .description h1{
 font-size: 3rem;
 font-weight:700;
 margin-bottom: 1.5rem;
+animation:fromTop var(--duration) ease-in;
 }
 main .description p{
     font-size:1.1rem;
     line-height: 1.8;
     max-width:600px;
+    animation:fromTop var(--duration) ease-in;
+   
 }
 .container{
     padding:1.5rem;
@@ -69,6 +73,8 @@ header{
 text-align: center;
 border-radius: 10px;
 margin-bottom:1.5rem;
+animation:fromTop var(--duration) both;
+animation-delay: calc(var(--duration) * 1.1) ;
 }
 header p span{
     font-weight:700;
@@ -78,6 +84,8 @@ header p span{
     background-color: white;
     border-radius: 10px;
     width: 100%;
+    animation:fromTop var(--duration) both;
+animation-delay: calc(var(--duration) * 1.5) ;
 }
 .form-control{
     margin-bottom: 10px;
@@ -287,7 +295,16 @@ footer p a{
          opacity:0.7;
      }
 }
-
+@keyframes fromTop {
+    0%{
+        transform: translateY(70%);
+        opacity:0;
+    }
+    100%{
+        transform: translateY(0);
+        opacity:1;
+    }
+}
 @media(max-width:850px){
     main{
         flex-wrap: wrap;
