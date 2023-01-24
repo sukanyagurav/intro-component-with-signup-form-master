@@ -306,6 +306,7 @@ footer p a{
     }
 }
 @media(max-width:850px){
+   
     main{
         flex-wrap: wrap;
         justify-content: center;
@@ -324,5 +325,11 @@ footer p a{
     }
     .container{
         padding: 1.5rem 0.5rem;
+    }
+}
+@media (max-width:600px) {
+    body{
+        background-image: url('images/bg-intro-mobile.png');
+    
     }
 }
