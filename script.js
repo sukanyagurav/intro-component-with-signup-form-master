@@ -25,14 +25,9 @@ function vaildateForm(){
     let lastNameValue=lastName.value.trim();
     let emailValue=email.value.trim();
     let pwdValue=password.value.trim();
-    if(!checkIfEmpty(firstNameValue,firstName,'First Name')){
-        setSuccess(firstName)
-      
-    }
-    if(!checkIfEmpty(lastNameValue,lastName,'Last Name') ){
-        setSuccess(lastName)
-      
-    }
+    (checkIfEmpty(firstNameValue,firstName,'First Name')) || checkName(firstNameValue,firstName);
+   (checkIfEmpty(lastNameValue,lastName,'Last Name') ) || checkName(lastNameValue,lastName);
+     
     checkIfEmpty(pwdValue,password,'Password') || checkPassword(pwdValue);
     checkIfEmpty(emailValue,email,'Email') || checkEmail(emailValue);
     registerSuccessful()
@@ -79,11 +74,20 @@ function registerSuccessful(){
      }, 5000);
    }
   }
+function checkName(name,input){
+    if(/\d/.test(name)){
+        setError(input,'Name doesn\'t contains Numbers')
+        console.log(/d/.test(name))
+    }
+    else{
+        setSuccess(input)
+        console.log('success')
+    }
+}
 function checkPassword(passwordValue){
     let re=/[!@#$%_^&*]/g
     if(passwordValue.length < 8){
         setError(password,'Passwords should contain at lease 8 characters')
-
     }
     else if(!passwordValue.match(re)){
         setError(password,'Passwords should contain special characters')
@@ -114,8 +118,7 @@ function setSuccess(input){
     const formControl = input.parentElement;
     const small = formControl.querySelector('small')
     if(formControl.classList.contains('error')){
-        formControl.classList.remove('error')
-        
+        formControl.classList.remove('error');   
     } 
     formControl.classList.add('success')
 	small.innerText = '';
