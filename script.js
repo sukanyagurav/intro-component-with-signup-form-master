@@ -48,25 +48,35 @@ function registerSuccessful(){
         }
     }
    if(count === 4){
-
-    const confetti =document.querySelector('.confetti-container');
-    time= setTimeout(()=>{
-        confetti.style.visibility = 'visible';
-       
-    },1000)
+    const svgContainer = document.createElement('div')
+    svgContainer.classList.add('svg')
+   
+    const time=setTimeout(() => {
+   form.appendChild(svgContainer)
+    const animItem = bodymovin.loadAnimation({
+        wrapper: svgContainer,
+        animType: 'svg',
+        loop: false,
+        autoplay: false,
+     path:'https://assets7.lottiefiles.com/packages/lf20_wkebwzpz.json'
+    })
+  
+    for(const i of formControl) {
+        i.style.visibility='hidden'
+    }
+    animItem.play();
+    }, 400);
     
     setTimeout(function( ) { 
-         clearInterval( time );
-         firstName.value='';
-         lastName.value='';
-         email.value='';
-         password.value='';
-         confetti.style.visibility = 'hidden';
-        
+        clearInterval(time)
+         svgContainer.classList.add('hide')
          for(var i=0;i< formControl.length;i++){
+            formControl[i].firstElementChild.value=''
             formControl[i].classList.remove('success')
+            formControl[i].style.visibility='visible'
         }
-     }, 3000);
+       
+     }, 5000);
    }
   }
 function checkPassword(passwordValue){
