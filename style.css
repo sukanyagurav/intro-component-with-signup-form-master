@@ -54,7 +54,7 @@ main .description p{
     line-height: 1.8;
     max-width:600px;
     animation:fromTop var(--duration) ease-in;
-   
+    -webkit-animation:fromTop var(--duration) ease-in;
 }
 .container{
     padding:1.5rem;
@@ -74,6 +74,8 @@ header{
     margin-bottom:1.5rem;
     animation:fromTop var(--duration) both;
     animation-delay: calc(var(--duration) * 1.1) ;
+    -webkit-animation:fromTop var(--duration) both;
+    -webkit-animation-delay: calc(var(--duration) * 1.1) ;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 
 }
@@ -87,6 +89,8 @@ header p span{
     width: 100%;
     animation:fromTop var(--duration) both;
     animation-delay: calc(var(--duration) * 1.5) ;
+    -webkit-animation:fromTop var(--duration) both;
+    -webkit-animation-delay: calc(var(--duration) * 1.5) ;
     position:relative;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
@@ -230,6 +234,17 @@ footer p a{
 }
 
 @keyframes fromTop {
+    0%{
+        transform: translateY(80%);
+        opacity:0;
+    }
+    100%{  
+          opacity:1;
+        transform: translateY(0);
+    
+    }
+}
+@-webkit-keyframes fromTop {
     0%{
         transform: translateY(80%);
         opacity:0;
