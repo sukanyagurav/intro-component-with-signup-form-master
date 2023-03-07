@@ -133,7 +133,7 @@ header p span{
     position: absolute;
     left:0.625rem;
     background-color: white;
-    top:0.875rem;
+    top:0.7rem;
     padding: 0 0.55rem;
     transition:transform 0.3s;
     font-size: 1rem;
@@ -149,15 +149,15 @@ header p span{
 }
 .form-control i.fa-exclamation-circle{
     position: absolute;
-    top:0.9375rem;
+    top:0.9rem;
     right:1rem;
     color:var(--color-red);
     visibility:hidden;
 }
 .form-control #showPassword{
     position: absolute;
-    top:1rem;
-    right:2.1875rem;
+    top:0.9rem;
+    right:2.18rem;
     color:var(--color-dark-blue);
     cursor:pointer;
    
