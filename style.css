@@ -127,9 +127,9 @@ header p span{
 .form-control label{
     color:var(--color-blue);
     position: absolute;
-    left:10px;
+    left:0.625rem;
     background-color: white;
-    top:14px;
+    top:0.875rem;
     padding: 0 0.55rem;
     transition:transform 0.3s;
     font-size: 1rem;
@@ -145,15 +145,15 @@ header p span{
 }
 .form-control i.fa-exclamation-circle{
     position: absolute;
-    top:15px;
-    right:10px;
+    top:0.9375rem;
+    right:1rem;
     color:var(--color-red);
     visibility:hidden;
 }
 .form-control #showPassword{
     position: absolute;
-    top:16px;
-    right:35px;
+    top:1rem;
+    right:2.1875rem;
     color:var(--color-dark-blue);
     cursor:pointer;
    
