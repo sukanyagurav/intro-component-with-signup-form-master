@@ -101,8 +101,7 @@ function checkPassword(passwordValue){
     }
   }
 function checkEmail(emailValue){
-    let regex= /^([a-zA-Z0-9\.-]+)@([a-zA-Z0-9-]+).([a-z]{2,20})(\.[a-z]{2,8})?$/
-   
+    let regex= /^([a-zA-Z0-9\.-]+)@([a-zA-Z0-9-]+)(\.[a-z]{2,20})(\.[a-z]{2,8})?$/
      if(!emailValue.includes('@')){
         setError(email,'Please include @ in the email address')
     }
